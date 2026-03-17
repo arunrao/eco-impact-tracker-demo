@@ -2,6 +2,10 @@
 
 A sophisticated supply chain intelligence dashboard built to analyze the financial and assembly impact of Engineering Change Orders (ECOs) against a Current State Bill of Materials (BOM).
 
+## Screenshots
+![Desktop Preview 1](/assets/eco-desktop-preview-1.png)
+![Desktop Preview 2](/assets/eco-desktop-preview-2.png)
+
 ## Features
 
 - **Dual-CSV Ingestion**: Drop both your Current BOM and the proposed ECO Changes CSV to begin analysis.
