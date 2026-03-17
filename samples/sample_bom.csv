@@ -1,0 +1,27 @@
+Part Number,Description,Level,Parent Assembly,Qty Per,Unit Cost,Supplier,Lead Time (Days),Category,Notes
+ISGW-1000,Industrial Sensor Gateway — Top Assembly,0,,1,847.50,Internal,0,Finished Good,Main product assembly. Ships to OEM customers.
+PCB-MAIN-200,Main Controller PCB,1,ISGW-1000,1,124.00,Apex Circuit Works,45,PCB,4-layer board. Gerbers on file. Last rev B.
+ENCL-300,Polycarbonate Enclosure — IP67,1,ISGW-1000,1,38.75,Shenzhen Molding Co.,60,Mechanical,IP67 rated. Custom mold tooling owned by us.
+PWR-SUB-400,Power Subsystem Assembly,1,ISGW-1000,1,56.20,Internal,0,Sub-Assembly,Assembled in-house from components below.
+COMM-MOD-500,LTE-M Communication Module,1,ISGW-1000,1,89.00,Sierra Wireless,90,Communication,Single-source. Long lead time risk flagged in 2025 audit.
+HARN-600,Internal Wiring Harness,1,ISGW-1000,1,12.40,Cable Masters Ltd.,30,Cable,Custom length. 6-pin JST connector both ends.
+LABEL-700,Regulatory Label Set (UL/CE/FCC),1,ISGW-1000,1,1.85,LabelPro Inc.,14,Labeling,Reorder point 500 units. CE mark expires Sept 2026.
+MCU-201,STM32H743 Microcontroller,2,PCB-MAIN-200,1,18.60,STMicroelectronics,56,IC,Primary MCU. 480MHz Cortex-M7. LQFP144.
+FLASH-202,NOR Flash 64MB SPI,2,PCB-MAIN-200,1,3.20,Winbond Electronics,28,IC,Firmware storage. W25Q512JVFIQ.
+RAM-203,SDRAM 32MB,2,PCB-MAIN-200,1,4.75,Alliance Memory,35,IC,Frame buffer + runtime heap.
+ETH-204,Ethernet PHY — 10/100,2,PCB-MAIN-200,1,2.90,Microchip Technology,21,IC,LAN8742A. MII interface to MCU.
+CONN-205,RJ45 Industrial Connector,2,PCB-MAIN-200,2,1.45,Amphenol,18,Connector,Shielded. IP67 rated when mated.
+CONN-206,USB-C Receptacle,2,PCB-MAIN-200,1,0.95,Molex,21,Connector,Used for config and firmware update only.
+XTAL-207,25MHz Crystal Oscillator,2,PCB-MAIN-200,1,0.68,Abracon,14,Passive,Ethernet PHY reference clock.
+CAP-208,100uF Bulk Capacitor Array (x6),2,PCB-MAIN-200,6,0.22,Murata,21,Passive,Decoupling. X5R 16V 0805.
+SCRW-301,M4x8 Pan Head Screw SS,2,ENCL-300,4,0.08,FastenRight,7,Fastener,Stainless steel. Torque spec 1.2 Nm.
+GSKT-302,Silicone O-Ring Gasket,2,ENCL-300,1,2.10,SealTech,21,Mechanical,Custom profile. Critical for IP67 rating.
+MTPL-303,Aluminum Mounting Plate,2,ENCL-300,1,6.40,PrecisionMetal Co.,18,Mechanical,DIN rail compatible. 2mm 6061-T6.
+LENS-304,Polycarbonate Status Window,2,ENCL-300,1,1.20,Shenzhen Molding Co.,45,Mechanical,Same mold supplier as enclosure. 3-color LED visible.
+VREG-401,5V Buck Converter Module,2,PWR-SUB-400,1,8.90,Vicor Corporation,42,Power,Input 9-36VDC. 15W output.
+VREG-402,3.3V LDO Regulator,2,PWR-SUB-400,1,1.10,Texas Instruments,14,Power,TPS7A4700. Low noise for analog section.
+FUSE-403,Automotive Blade Fuse 3A,2,PWR-SUB-400,1,0.35,Littelfuse,10,Protection,ATO mini blade. 32V rated.
+TVS-404,TVS Diode Array — 24V,2,PWR-SUB-400,2,0.88,ON Semiconductor,21,Protection,Surge and ESD protection on power input.
+CONN-405,Power Input Connector M12 A-coded,2,PWR-SUB-400,1,4.20,Phoenix Contact,28,Connector,Industry standard for industrial equipment.
+ANT-501,LTE-M External Antenna,2,COMM-MOD-500,1,6.50,Taoglas,21,RF,SMA connector. 3dBi gain. Magnetic base optional.
+SIM-502,Industrial SIM Card Tray,2,COMM-MOD-500,1,1.80,Molex,14,Connector,2FF standard. Vibration rated.

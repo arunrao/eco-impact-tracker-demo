@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ECO Impact Tracker Demo
 
-## Getting Started
+A sophisticated supply chain intelligence dashboard built to analyze the financial and assembly impact of Engineering Change Orders (ECOs) against a Current State Bill of Materials (BOM).
 
-First, run the development server:
+## Features
 
+- **Dual-CSV Ingestion**: Drop both your Current BOM and the proposed ECO Changes CSV to begin analysis.
+- **Blast Radius Calculation**: Computes the upward assembly impact (how many parent assemblies are affected by a component change).
+- **Hard Math vs. Generative Analysis**: Uses calculated unit cost overrides combined with `@google/generative-ai` to classify the severity, rationale, and impact score of each change order line.
+- **Interactive Matrix & Trees**: Built using `@tremor/react` and recursive React components to help engineers visually understand disruption.
+- **Decision Engine**: Generates an automated, shareable ECO portfolio approval recommendation.
+
+## Setup Instructions
+
+1. **Install Dependencies**:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Set Environment Variables**:
+Requires a valid Google Gemini API Key. Create a `.env.local` file in the root of the project:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```env
+GEMINI_API_KEY=your_gemini_api_key_here
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. **Run the Dashboard**:
+```bash
+npm run dev
+```
 
-## Learn More
+The application will be available at `http://localhost:3000`.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Architecture Notes 
+- Built on Next.js 14 App Router.
+- Tailwind CSS v4 styling explicitly utilizing a dark "Midnight" theme matching project specifications.
+- **Note**: This demo mocks the `ecoAgent` integration for `@antigravity/sdk` as it is an internal package. Replace the mock in `src/lib/antigravity.ts` in production scenarios.
